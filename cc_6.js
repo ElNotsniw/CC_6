@@ -17,7 +17,7 @@ let totalProfit = calculateProfit(costPrice, sellingPrice, unitsSold);
 
 // Console-logging the end result
 
-console.log(`Total Profit: $${totalProfit}`);                   // Output: Total Profit: $5000
+console.log(`Total Profit: $${totalProfit}`);                   // Output: "Total Profit: $5000"
 
 
 
@@ -29,9 +29,9 @@ const calculateSalesTax = function(amount, taxRate) {
     return amount * taxRate;
 };
 
-// Creating values to use for the function
+// Creating values to use for the function and console-logging it
 
-console.log(`10% Sales Tax of $500 is: $${calculateSalesTax(500, 0.10)}`);       // Output: 10% Sales Tax of $500 is $50
+console.log(`10% Sales Tax of $500 is: $${calculateSalesTax(500, 0.10)}`);       // Output: "10% Sales Tax of $500 is $50"
 
 
 
@@ -61,8 +61,41 @@ const calculateBonus = (salary, performanceRating) => {
     return salary * bonusPercentage;
 };
 
-// Setting up values to use with our arrow function to determine the bonus amount
+// Setting up values to use with our arrow function to determine the bonus amount and console-logging it
 
 const salary = 70000;
 const performanceRating = "Excellent";
-console.log(`Bonus increase after getting an Excellent rating: $${calculateBonus(salary, performanceRating)}`);     // Output: Bonus increase after getting an Excellent rating: $14000
+console.log(`Bonus increase after getting an Excellent rating: $${calculateBonus(salary, performanceRating)}`);     // Output: "Bonus increase after getting an Excellent rating: $14000"
+
+
+
+
+// Task 4 - Parameters and Arguments
+
+// Setting up the function
+
+const calculateSubscriptionCost = (plan, months, discount = 0) => {
+    let monthlycost;
+
+    switch (plan) {
+        case "Basic":
+            monthlycost = 10
+            break;
+        case "Premium":
+            monthlycost = 20
+            break
+        case "Enterprise":
+            monthlycost = 50;
+            break;
+    }
+
+    const totalCost = monthlycost * months;
+    const discountedCost = totalCost - (totalCost * discount);
+
+    return discountedCost;
+
+};
+
+// Setting up the values to use in our function and console-logging it
+
+console.log(`With the Enterprise plan for 12 months and a 20% discount, it totals: $${calculateSubscriptionCost("Enterprise", 12, 0.20)}`)      // Output: "With the Enterprise plan for 12 months and a 20% discount, it totals: $480"

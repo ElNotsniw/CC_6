@@ -99,3 +99,18 @@ const calculateSubscriptionCost = (plan, months, discount = 0) => {
 // Setting up the values to use in our function and console-logging it
 
 console.log(`With the Enterprise plan for 12 months and a 20% discount, it totals: $${calculateSubscriptionCost("Enterprise", 12, 0.20)}`)      // Output: "With the Enterprise plan for 12 months and a 20% discount, it totals: $480"
+
+
+
+
+// Task 5 - Returning Values
+
+// Setting up the function that converts currency at a certain exchange rate
+
+const convertCurrency = (amount, exchangeRate) => {
+    return amount * exchangeRate;
+};
+
+// Plugging in values to use with function, we are able to use this function to find the conversion output
+
+console.log(`Total amount after conversion: $${convertCurrency(300, 0.75)}`);           // Output: "Total amount after conversion: $225"

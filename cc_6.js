@@ -166,6 +166,25 @@ const createExpenseTracking = () => {
 
 const Expenses = createExpenseTracking();
 
-Expenses(100);
-Expenses(500);
-Expenses(700);
+Expenses(100);              // Output: Expense added: $100. Total: $100
+Expenses(500);              // Output: Expense added: $500. Total: $600
+Expenses(700);              // Output: Expense added: $700. Total: $1300
+
+
+
+
+// Task 8 - Recursion in JavaScript
+
+// Setting up the recursion
+
+const calculateyearstopromotion = (employeelevel) => {
+    if (employeelevel >= 10) {
+        return 0;
+    }
+    return 2 + calculateyearstopromotion(employeelevel + 1);
+};
+
+// Console-logging the function and inputing values to see how many years it would take to reach level 10
+
+console.log(`Years to Level 10: ${calculateyearstopromotion(7)}`)           // Output: Years to Level 10: 6
+console.log(`Years to Level 10: ${calculateyearstopromotion(3)}`)           // Output: Years to Level 10: 14

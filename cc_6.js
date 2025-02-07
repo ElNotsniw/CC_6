@@ -114,3 +114,34 @@ const convertCurrency = (amount, exchangeRate) => {
 // Plugging in values to use with function, we are able to use this function to find the conversion output
 
 console.log(`Total amount after conversion: $${convertCurrency(300, 0.75)}`);           // Output: "Total amount after conversion: $225"
+
+
+
+// Task 6 - Higher-Order Functions
+
+// Declaring a variable and assign it with an array of 5 values
+
+const orders = [100, 300, 600, 700, 900];
+
+// Setting up the higher-order function
+
+const applyBulkDiscount = (orders, discountFunction) => {
+    return orders.map (order => {
+        if (order > 500) {
+            return discountFunction(order);
+        }
+        return order;
+    });
+};
+
+// Function that applies the 10% discount
+
+const applyDiscount = (amount) => {
+    return amount * 0.90;
+};
+
+// Applying the bulk discount to all the values that fit the requirement and console-logging the results
+
+const discountedOrders = applyBulkDiscount(orders, applyDiscount);
+
+console.log(discountedOrders);      // Output: 100, 300, 540, 630, 810

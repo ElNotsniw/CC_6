@@ -145,3 +145,27 @@ const applyDiscount = (amount) => {
 const discountedOrders = applyBulkDiscount(orders, applyDiscount);
 
 console.log(discountedOrders);      // Output: 100, 300, 540, 630, 810
+
+
+
+
+// Task 7 - Closures
+
+// Creating an inital function to start the tracker at 0
+
+const createExpenseTracking = () => {
+    let total = 0;
+
+    return (expense) => {
+        total += expense;
+        console.log(`Expense added: $${expense}. Total: $${total}`);
+    };
+};
+
+// Adding values to the tracker and console-logging it
+
+const Expenses = createExpenseTracking();
+
+Expenses(100);
+Expenses(500);
+Expenses(700);
